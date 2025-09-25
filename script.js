@@ -139,4 +139,21 @@ operationBtns.forEach(operateBtn => {
 });
 
 
+const result = document.querySelector("#result");
+
+result.addEventListener('click', () => {
+
+     if (!operateBtnValue || !currentNumber || !nextnumber) {
+            return; 
+    }
+
+    resultValue = operate(operateBtnValue, Number(currentNumber), Number(nextnumber));
+    const roundingResult = Math.round(resultValue * 100) / 100;
+    historyDisplay.textContent = currentNumber + " " + operateBtnValue + " " + nextnumber + " = ";
+    currentdisplay.textContent = roundingResult
+    currentNumber = roundingResult;
+    nextnumber = "";
+    justevaluated = true;
+})
+
 
