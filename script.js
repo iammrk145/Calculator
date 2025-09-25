@@ -3,15 +3,13 @@ function add(num1, num2){
     return num1 + num2;
 }
 
-console.log(add(4,5));
-
 //function for substraction
 
 function substraction(num1, num2){
     return num1 - num2;
 }
 
-console.log(substraction(7, 8));
+
 
 //function for multiply
 
@@ -19,7 +17,7 @@ function multiply(num1, num2){
     return num1 * num2;
 }
 
-console.log(multiply(4, 5));
+
 
 // function for divide
 
@@ -33,13 +31,11 @@ function divide(num1, num2){
     
 }
 
-console.log(divide(4, 2));
-
 
 // function for a operation 
 
 
-function operation(operation, num1, num2){
+function operate(operation, num1, num2){
 
     let result;
 
@@ -52,11 +48,11 @@ function operation(operation, num1, num2){
             result = substraction(num1, num2);
             break;
 
-        case "*":
+        case "x":
             result = multiply(num1,num2);
             break;
 
-        case "/":
+        case "÷":
             result = divide(num1, num2);
             break;
         
@@ -67,4 +63,37 @@ function operation(operation, num1, num2){
     return result;
 }
 
-console.log(operation("-", 7, 0));
+console.log(operate("-", 7, 0));
+
+let nextnumber = "";
+let currentNumber = "";
+let operateBtnValue;
+let justevaluated = false;
+
+const numbBtns = document.querySelectorAll(".numberbtn");
+const currentdisplay = document.querySelector("#currentdisplay");
+
+numbBtns.forEach(button => {
+    button.addEventListener('click', () => {
+
+        if(button.textContent === '.' && currentdisplay.textContent.includes(".")){
+            return;
+        }
+
+        if(justevaluated){
+            currentdisplay.textContent = "";
+            historyDisplay.textContent = "";
+            currentNumber = "";
+            justevaluated = false;
+         } 
+
+    
+        const btnVallue = button.textContent;
+        currentdisplay.textContent += btnVallue;
+        nextnumber = currentdisplay.textContent;
+
+        
+         
+    } )
+})
+
