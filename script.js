@@ -157,3 +157,22 @@ result.addEventListener('click', () => {
 })
 
 
+const clearBtn = document.querySelector("#clear");
+
+clearBtn.addEventListener('click', () => {
+    historyDisplay.textContent = "";
+    currentdisplay.textContent = "";
+    currentNumber = "";
+    nextnumber = "";
+});
+
+
+const delBtn = document.querySelector("#del");
+
+delBtn.addEventListener('click', () => {
+    
+    if(nextnumber){
+        currentdisplay.textContent = currentdisplay.textContent.slice(0, -1);
+        nextnumber = currentdisplay.textContent
+    } 
+})
