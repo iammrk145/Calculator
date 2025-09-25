@@ -1,0 +1,114 @@
+/* BODY AND CALCULATOR CONTAINER */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#calculator {
+    background: #f1faee;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 360px;
+    max-width: 90vw;
+}
+
+/* DISPLAY */
+#display {
+    background: #222;
+    color: #fff;
+    text-align: right;
+    padding: 15px;
+    border-radius: 12px;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+#history {
+    font-size: 0.9rem;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#currentdisplay {
+    font-size: 2rem;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+/* BUTTON CONTAINER */
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ROWS */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* BUTTONS */
+button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* NUMBER BUTTONS */
+.numberbtn {
+    background: #a8dadc;
+}
+.numberbtn:hover {
+    background: #7dc2c3;
+}
+
+/* OPERATION BUTTONS */
+.operationbtn {
+    background: #f4a261;
+    color: #fff;
+}
+.operationbtn:hover {
+    background: #e76f51;
+}
+
+/* SPECIAL BUTTONS */
+#result {
+    background: #2a9d8f;
+    color: #fff;
+}
+#result:hover {
+    background: #21867a;
+}
+
+#clear {
+    background: #e63946;
+    color: #fff;
+}
+#clear:hover {
+    background: #b8232f;
+}
+
+#del {
+    background: #457b9d;
+    color: #fff;
+}
+#del:hover {
+    background: #365879;
+}
