@@ -97,3 +97,46 @@ numbBtns.forEach(button => {
     } )
 })
 
+const operationBtns = document.querySelectorAll(".operationbtn");
+const historyDisplay = document.querySelector("#history");
+
+
+operationBtns.forEach(operateBtn => {
+    operateBtn.addEventListener('click', () => {
+        
+        const op = operateBtn.textContent;
+    
+        if(op === '-' && currentdisplay.textContent === "" && !currentNumber){
+            currentdisplay.textContent = '-';
+            nextnumber = currentdisplay.textContent;
+            return;
+        }
+
+
+         if (currentNumber && nextnumber){
+            resultValue = operate(operateBtnValue, Number(currentNumber), Number(nextnumber));
+            currentNumber = resultValue;
+            operateBtnValue = op;
+            historyDisplay.textContent = currentNumber;
+            historyDisplay.textContent += " " + operateBtnValue;
+            currentdisplay.textContent = "";
+            console.log("if 1");
+        } else if (!currentNumber && nextnumber){
+            operateBtnValue = op;
+            currentNumber = nextnumber;
+            historyDisplay.textContent = currentNumber;
+            historyDisplay.textContent += " " + operateBtnValue;
+            nextnumber = "";
+            currentdisplay.textContent = "";
+            console.log("if2");
+        }  else if(currentNumber && !nextnumber){
+            operateBtnValue = op;
+            historyDisplay.textContent = currentNumber + " " + operateBtnValue;
+            currentdisplay.textContent = "";
+            console.log("if3");
+        }
+    })
+});
+
+
+
