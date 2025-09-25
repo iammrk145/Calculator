@@ -105,6 +105,13 @@ operationBtns.forEach(operateBtn => {
     operateBtn.addEventListener('click', () => {
         
         const op = operateBtn.textContent;
+
+          if(justevaluated){
+            currentNumber = resultValue;
+            currentdisplay.textContent = "";
+            historyDisplay.textContent= currentNumber + " " + op;
+            justevaluated = false;    
+         } 
     
         if(op === '-' && currentdisplay.textContent === "" && !currentNumber){
             currentdisplay.textContent = '-';
